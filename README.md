@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Software de Gestión de Inventario para Cafeterías KONECTA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción
 
-## Available Scripts
+Este software permite a KONECTA gestionar el inventario de sus cafeterías de manera eficiente. Permite la creación, edición, eliminación y listado de productos, así como la realización de ventas. El sistema asegura que solo los productos con stock disponible se muestren para la venta.
 
-In the project directory, you can run:
+## Funcionalidades
 
-### `npm start`
+- **Gestión de Productos:**
+  - Crear nuevos productos con los siguientes datos:
+    - ID
+    - Nombre de producto (OBLIGATORIO)
+    - Referencia (OBLIGATORIO)
+    - Precio (ENTERO OBLIGATORIO)
+    - Peso (ENTERO OBLIGATORIO)
+    - Categoría (OBLIGATORIO)
+    - Stock (ENTERO OBLIGATORIO)
+    - Fecha de creación (date OBLIGATORIO)
+  - Editar productos existentes.
+  - Eliminar productos.
+  - Listar todos los productos registrados en el sistema.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Gestión de Ventas:**
+  - Mostrar una lista desplegable con los productos disponibles para la venta.
+  - Filtrar productos que no tienen stock.
+  - Permitir la entrada de la cantidad a vender.
+  - Actualizar el stock de productos restando la cantidad vendida.
+  - Registrar las ventas en una tabla de historial de ventas.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Requisitos
 
-### `npm test`
+- Node.js v14 o superior
+- Es necesario ejecutar el backend de la aplicación en el puerto 3001 (Validar archivo .env).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalación
 
-### `npm run build`
+1. Clona el repositorio:
+   ```bash
+   git clone -b master ________
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navega al directorio del proyecto:
+   ```bash
+   cd ________
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Instala las dependencias:
+   ```bash
+   npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Ejecuta la aplicación:
+   ```bash
+   npm start
