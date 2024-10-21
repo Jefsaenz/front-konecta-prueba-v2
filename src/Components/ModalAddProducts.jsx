@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Button, Form, Modal } from 'react-bootstrap'
-import { createProduct, getAvailableProducts, getProducts } from '../Services/products.sercices';
+import { createProduct, getAvailableProducts, getProducts, getSales } from '../Services/products.sercices';
 import Swal from 'sweetalert2';
 
-const ModalAddProducts = ({setProducts,showModalAdd,setShowModalAdd,setProductsAvailable}) => {
+const ModalAddProducts = ({setProducts,showModalAdd,setShowModalAdd,setProductsAvailable, setSales}) => {
     
     const [errors, setErrors] = useState({});
     const [addProducts, setAddProducts] = useState({
@@ -55,6 +55,8 @@ const ModalAddProducts = ({setProducts,showModalAdd,setShowModalAdd,setProductsA
                     setProducts(data);
                     const availableProd = await getAvailableProducts();
                     setProductsAvailable(availableProd);
+                    const dataSales = await getSales();
+                    setSales(dataSales);
                     setAddProducts({
                         product_name: '',
                         reference: '',

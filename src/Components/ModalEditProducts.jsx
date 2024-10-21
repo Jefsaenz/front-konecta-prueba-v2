@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
-import { getAvailableProducts, getProducts, updateProduct } from '../Services/products.sercices';
+import { getAvailableProducts, getProducts, getSales, updateProduct } from '../Services/products.sercices';
 
-const ModalEditProducts = ({ showModalEdit, setShowModalEdit, productToEdit, idToEdit, setProducts,setProductsAvailable }) => {
+const ModalEditProducts = ({ showModalEdit, setShowModalEdit, productToEdit, idToEdit, setProducts,setProductsAvailable,setSales}) => {
     const [editProduct, setEditProduct] = useState({
         product_name: '',
         reference: '',
@@ -57,6 +57,8 @@ const ModalEditProducts = ({ showModalEdit, setShowModalEdit, productToEdit, idT
                 setProducts(data);
                 const availableProd = await getAvailableProducts();
                 setProductsAvailable(availableProd);
+                const dataSales = await getSales();
+                setSales(dataSales);
                 setShowModalEdit(!showModalEdit);
             }
         }

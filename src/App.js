@@ -35,8 +35,8 @@ function App() {
 
   const fetchSales = async () => {
     try {
-      const data = await getSales();
-      setSales(data);
+      const dataSales = await getSales();
+      setSales(dataSales);
     } catch (error) {
       console.error('Error al listar los productos:', error.message);
     }
@@ -59,6 +59,8 @@ function App() {
             setProducts(data);
             const availableProd = await getAvailableProducts();
             setProductsAvailable(availableProd);
+            const dataSales = await getSales();
+            setSales(dataSales);
           }
           Swal.fire("Producto eliminado!", "", "success");
         } else if (result.isDenied) {
@@ -131,6 +133,8 @@ function App() {
         setProducts(data);
         const availableProd = await getAvailableProducts();
         setProductsAvailable(availableProd);
+        const dataSales = await getSales();
+        setSales(dataSales);
         Swal.fire({
 
           icon: "success",
@@ -288,8 +292,8 @@ function App() {
           </div>
         </div>
       </div>
-      <ModalAddProducts showModalAdd={showModalAdd} setShowModalAdd={setShowModalAdd} setProducts={setProducts} setProductsAvailable={setProductsAvailable} />
-      <ModalEditProducts idToEdit={idToEdit} productToEdit={productToEdit} showModalEdit={showModalEdit} setShowModalEdit={setShowModalEdit} setProducts={setProducts} setProductsAvailable={setProductsAvailable} />
+      <ModalAddProducts showModalAdd={showModalAdd} setShowModalAdd={setShowModalAdd} setProducts={setProducts} setProductsAvailable={setProductsAvailable} setSales={setSales} />
+      <ModalEditProducts idToEdit={idToEdit} productToEdit={productToEdit} showModalEdit={showModalEdit} setShowModalEdit={setShowModalEdit} setProducts={setProducts} setProductsAvailable={setProductsAvailable} setSales={setSales} />
     </main>
   );
 }
