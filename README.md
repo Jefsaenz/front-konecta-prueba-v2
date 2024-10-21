@@ -36,11 +36,11 @@ Este software permite a KONECTA gestionar el inventario de sus cafeterías de ma
 
 1. Clona el repositorio:
    ```bash
-   git clone -b master ________
+   git clone -b master https://github.com/Jefsaenz/front-konecta-prueba-v2.git
 
 2. Navega al directorio del proyecto:
    ```bash
-   cd ________
+   cd front-konecta-prueba-v2
 
 3. Instala las dependencias:
    ```bash
